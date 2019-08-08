@@ -5,10 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+      cartNum: '',
+      money_sign: ''
   },
   mutations: {
-
+      // cartNumCount(state) {
+      //    state.cartNum = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo).length : ''
+      // }
+  },
+  getters: {
+      // cartNumCount: state => {
+      //    return state.cartNum = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo).length : ''
+      // }
   },
   actions: {
 
