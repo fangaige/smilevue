@@ -3,7 +3,7 @@
         <div class="swiper-area">
             <van-swipe :autoplay="3000">
               <van-swipe-item v-if="goodsInfo.main_video_url">
-                <video :src="goodsInfo.main_video_url" controls="controls" muted width="100%"/>
+                <video :src="goodsInfo.main_video_url" controls="controls" width="100%"/>
               </van-swipe-item>
               <van-swipe-item v-for="(image, index) in goodsInfo.list_images" :key="index">
                 <img v-lazy="image" width="100%"/>
@@ -100,7 +100,13 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
           @sku-selected="skuSelected"
-        />
+        >
+           <template slot="sku-header-price" slot-scope="props">
+             <div class="van-sku__goods-price">
+               <span class="van-sku__price-symbol">{{goodsInfo.money_sign}}</span><span class="van-sku__price-num">{{ props.price }}</span>
+             </div>
+           </template>
+        </van-sku>
 
     </div>
 </template>
@@ -258,7 +264,7 @@
                         this.goods.picture = this.goodsInfo.main_image_url  //无属性规格，默认图片
                         this.$store.money_sign = this.goodsInfo.money_sign  //货币
                         this.sku.list = this.goodsInfo.list                 // sku
-                        this.sku.tree = this.goodsInfo.tree                 // 所有属性 
+                        this.sku.tree = this.goodsInfo.tree || []                 // 所有属性 
                         this.sku.price = this.goodsInfo.price               // 默认价格（单位元）
                         this.sku.none_sku = this.goodsInfo.none_sku         // 是否无规格商品
                         this.sku.stock_num = this.goodsInfo.stock_num       //总库存
