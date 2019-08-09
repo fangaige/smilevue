@@ -238,8 +238,7 @@
             }
         },
         created(){
-            this.goodsId=42
-            //  this.$route.query.goodsId ?this.$route.query.goodsId : this.$route.params.goodsId
+            this.goodsId=this.$route.query.goodsId ?this.$route.query.goodsId : this.$route.params.goodsId
             console.log(this.goodsId)
             this.getInfo()
             this.$store.state.cartNum = localStorage.cartInfo ? (JSON.parse(localStorage.cartInfo).length===0?'':JSON.parse(localStorage.cartInfo).length) : ''
