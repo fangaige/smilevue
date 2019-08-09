@@ -238,7 +238,7 @@
             }
         },
         created(){
-            this.goodsId=48
+            this.goodsId=42
             //  this.$route.query.goodsId ?this.$route.query.goodsId : this.$route.params.goodsId
             console.log(this.goodsId)
             this.getInfo()
