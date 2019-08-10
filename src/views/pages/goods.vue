@@ -312,6 +312,7 @@
                 this.$router.push({name:'Cart'})
             },
             tohome(){
+              Toast('暂未开放');return
                 this.$router.push({name:"ShoppingMall"})
             },
             tocart(){
