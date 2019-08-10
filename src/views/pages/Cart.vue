@@ -32,6 +32,23 @@
            </van-card>
           </van-checkbox>
         </van-checkbox-group>
+        <van-row style="padding: 10px">
+             <van-col>
+                 <van-radio-group v-model="radio">
+                   <van-radio name="1">
+                     <span style="font-size: 14px">货到付款</span> <img src="/src/assets/images/cash.jpg" alt="">
+                   </van-radio>
+                   <!-- <van-radio name="2">
+                     单选框 2
+                     <img
+                       slot="icon"
+                       slot-scope="props"
+                       :src="props.checked ? icon.active : icon.inactive"
+                     >
+                   </van-radio> -->
+                 </van-radio-group>
+             </van-col>
+        </van-row>
         <van-cell-group>
           <van-field
             v-model="name"
@@ -85,6 +102,7 @@
           />
         </van-cell-group>
         <van-submit-bar
+        class="left50"
           :price="totalMoney"
           :disabled="!checkedGoods.length"
           button-text="结算"
@@ -102,6 +120,7 @@
     export default {
        data() {
            return {
+               radio: '1',
                cartInfo: [] ,
                isEmpty: false ,
                checkedGoods: [],

@@ -37,7 +37,7 @@
         </van-cell-group>
 
         <div>
-            <van-tabs swipeable sticky>
+            <van-tabs class="mallFlexd" swipeable sticky>
                 <van-tab title="商品详情">
                    <div class="detail" v-html="goodsInfo.detail_desc">
                       
@@ -47,9 +47,9 @@
                 <van-tab class="comment" title="评论">
                     <van-list
                       v-model="loading"
-                      :finished="finished"
+                      :finished="true"
                       finished-text="没有更多了"
-                      @load="onLoad">
+                     >
                       <van-cell
                         v-for="item in commentList"
                         :key="item"
@@ -57,10 +57,10 @@
                     </van-list>
                 </van-tab>
             </van-tabs>
-
+<!-- @load="onLoad" -->
         </div>
 
-        <van-goods-action>
+        <van-goods-action class="marginauto">
           <van-goods-action-icon
             :info="cartNumCount"
             icon="cart-o"
@@ -86,6 +86,7 @@
 
 
         <van-sku
+        class="left50"
           v-model="show"
           :sku="sku"
           :goods="goods"
@@ -127,7 +128,7 @@
                     'http://images.baixingliangfan.cn/shopGoodsImg/20180415/20180415120857_4885.jpg'
                   ],
                 commentList:[
-                    1,2,3,4,5,6,7,8,9,10
+                    
                 ],
                 loading: false,
                 finished: false,
@@ -425,5 +426,9 @@
     } 
     .imgsdiv {
       display: inline-block;
+    }
+    .mallFlexd >>> .van-sticky.van-sticky--fixed {
+      max-width: 600px;
+      margin: 0 auto;
     }
 </style>

@@ -5,11 +5,11 @@
                 <router-view />
             </keep-alive>
         </div>
-        <van-tabbar v-model="active" @change="changeTabbar(active)">
+        <van-tabbar class="left50" v-model="active" @change="changeTabbar(active)">
             <van-tabbar-item icon="shop">首页</van-tabbar-item>
             <van-tabbar-item icon="records">列表</van-tabbar-item>
             <van-tabbar-item icon="cart">购物车</van-tabbar-item>
-            <van-tabbar-item icon="contact">会员中心</van-tabbar-item>
+            <!-- <van-tabbar-item icon="contact">会员中心</van-tabbar-item> -->
         </van-tabbar>
     </div>
 </template>
